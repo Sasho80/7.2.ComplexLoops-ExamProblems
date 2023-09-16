@@ -79,3 +79,51 @@ Output
 Input 531441
 Output 999999
 
+03.Problem: Stop Number
+Write a program that prints on the console all numbers from N to M, that are divisible by 2 and 3 
+without reminder, in reversed order. We will read one more "stop" number from the console – S. If 
+any of the numbers divisible by 2 and 3 is equal to the stop number, it should not be printed, and the 
+program should end. Otherwise print all numbers up to N, that meet the condition.
+Input Data
+Read from the console 3 numbers, each on a single line:
+• N – integer number: 0 ≤ N < M.
+• M – integer number: N < M ≤ 10000.
+• S – integer number: N ≤ S ≤ M.
+Output Data
+Print on the console on a single line all numbers, that meet the condition, separated by space.
+Sample Input and Output
+Input Output          Comments 
+1     30 24 18 12 6   Numbers from 30 to 1, that are divisible at the same time by 2 and 
+30                    without reminder are: 30, 24, 18, 12 and 6. The number 15 is not 
+15                    equal to any, so the sequence continues.
+
+Input Output           Comments 
+1     36 30 24 18      Numbers from 36 to 1, that are divisible at the same time by 2 and 3 
+36                     without reminder are: 36, 30, 24, 18, 12 and 6. The number 12 is 
+12                     equal to the stop number, so we stop by 18.
+
+Hints and Guidelines
+The problem can be divided into four logical parts:
+• Reading the input.
+• Checking all numbers in the given range, and then running a loop.
+• Checking the conditions of the problem according to every number in the given range.
+• Printing the numbers.
+First part is ordinary – we read three integer numbers from the console, so we will use int.
+We have already seen examples of the second part – initialization of the for loop. It is a bit tricky –
+the explanation mentions that the numbers have to be printed in reversed order. This means that the
+initial value of the variable i will be bigger, and from the examples we can see that it is M. Thus, the
+final value of i should be N. The fact that we will print the results in reversed order and the values of
+i, suggests that the step would be decreased by 1.
+for (int i = m; i >= n; i--)
+After we have initialized the for loop, it is time for the third part of the problem – checking the 
+condition if the given number is divisible both by 2 and 3 without reminder. We will do this using one 
+simple if condition that we will leave to the reader to do by themselves.
+Another tricky part of this problem is that apart from the above check we need to do another one –
+whether the number is equal to the "stop" number entered from the console on the third line. To do 
+this check, the previous one has to be passed. For this reason, we will add another if statement that 
+we will nest in the previous one. If the condition is true, we need to stop the program from printing. 
+We can do this using a break operator, and it will lead us out of the for loop.
+If the condition that checks whether the number is equal with "stop" number returns a false result, 
+our program should continue to print. This covers the fourth and last part of our program.
+
+
