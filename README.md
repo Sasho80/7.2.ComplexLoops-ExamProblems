@@ -101,7 +101,6 @@ Input Output           Comments
 1     36 30 24 18      Numbers from 36 to 1, that are divisible at the same time by 2 and 3 
 36                     without reminder are: 36, 30, 24, 18, 12 and 6. The number 12 is 
 12                     equal to the stop number, so we stop by 18.
-
 Hints and Guidelines
 The problem can be divided into four logical parts:
 • Reading the input.
@@ -125,5 +124,44 @@ we will nest in the previous one. If the condition is true, we need to stop the 
 We can do this using a break operator, and it will lead us out of the for loop.
 If the condition that checks whether the number is equal with "stop" number returns a false result, 
 our program should continue to print. This covers the fourth and last part of our program.
+
+05.Problem: Digits
+Write a program that reads from the console an integer within the range [100 … 999], and then prints 
+it a predefined number of times – modifying it before each print, as follows:
+• If the number is divisible by 5 without reminder, subtract from it its first digit.
+• If the number is divisible by 3 without reminder, subtract from it its second digit
+• If none of the above-mentioned conditions is valid, add to it its third digit.
+Print on the console N lines, and each line has M numbers, that are result of the above actions.
+• N = sum of the first and second digit of the number.
+• M = sum of the first and third digit of the number.
+Input Data
+The input is read from the console and is an integer within the range [100 … 999].
+Output Data
+Print on the console all integer numbers, result of the above-mentioned calculations in the respective 
+number of rows and columns as in the examples.
+Sample Input and Output
+Input Output                                Comments 
+376                                         10 lines with 9 numbers in each
+      382 388 394 400 397 403 409 415 412   Input number 376 → neither 5, 
+      418 424 430 427 433 439 445 442 448   nor 3 → 376 + 6 → = 382 → neither 5, 
+      454 460 457 463 469 475 472 478 484   nor 3 → 382 + 6 = 388 + 6 = 394 + 6 =
+      490 487 493 499 505 502 508 514 520   400 → division by 5 → 400 - 3 = 397
+      517 523 529 535 532 538 544 550 547
+      553 559 565 562 568 574 580 577 583
+      589 595 592 598 604 610 607 613 619
+      625 622 628 634 640 637 643 649 655
+      652 658 664 670 667 673 679 685 682
+      688 694 700 697 703 709 715 712 718
+Input Output       Comments 
+132                (1 + 3) = 4 and (1 + 2) = 3 → 4 lines with 3 numbers in each
+      129 126 123  Input number 132 → division by 3 → 132 - 3 =
+      120 119 121  = 129 → division by 3 → 129 - 3 = 
+      123 120 119  = 126 → division by 3 → 126 - 3 = 
+      121 123 120  = 123 → division by 3 → 123 - 3 =
+                   = 120 → division by 5 → 120 - 1 = 
+                   ..... 121 → neither by 5, nor 3 → 121 + 2 = 123
+Hints and Guidelines
+Solve the problem by yourself, using what you learned from the previous ones. Remember that you 
+will need to define different variables for each digit of the input number.
 
 
